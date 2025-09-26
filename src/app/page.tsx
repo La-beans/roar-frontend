@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BookOpen, Headphones, Users } from "lucide-react";
+import { BookOpen, Headphones, Users} from "lucide-react";
 
 interface Article {
   id: number;
@@ -23,6 +23,7 @@ interface Podcast {
   episode_date?: string;
   coverImage?: string;
   guests?: string;
+  videoLink?: string;
 }
 
 export default function HomePage() {
@@ -281,30 +282,34 @@ export default function HomePage() {
           <p className="text-lg text-white mb-6 text-center">
             Listen to the podcast on
           </p>
-          <a
-            href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
-          >
-            <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="12" fill="currentColor" />
-              <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
-            </svg>
-            Spotify
-          </a>
-          <a
-            href="https://www.youtube.com/@roarpodcast" // <-- your YouTube channel or video link
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-red-600 hover:text-white transition"
-          >
-            <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-              <rect x="2" y="6" width="20" height="12" rx="3" fill="currentColor"/>
-              <polygon points="10,9 16,12 10,15" fill="#fff"/>
-            </svg>
-            YouTube
-          </a>
+          <div className="flex gap-4 mt-2">
+            <a
+              href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
+              style={{ minWidth: "160px", justifyContent: "center" }}
+            >
+              <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="12" fill="currentColor" />
+                <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
+              </svg>
+              Spotify
+            </a>
+            <a
+              href={latestPodcast?.videoLink || "https://youtu.be/7ZgRO4jJQyY?si=NWbNiGUR4FdrSTlct"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
+              style={{ minWidth: "160px", justifyContent: "center" }}
+            >
+              <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                <rect x="2" y="6" width="20" height="12" rx="3" fill="currentColor"/>
+                <polygon points="10,9 16,12 10,15" fill="#fff"/>
+              </svg>
+              YouTube
+            </a>
+          </div>
         </div>
 
         {/* Right: Latest Episodes */}
