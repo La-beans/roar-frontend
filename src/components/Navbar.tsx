@@ -43,7 +43,7 @@ export default function Navbar(): JSX.Element {
     ))
   );
 
-  console.log("Navbar user object:", user);
+  //console.log("Navbar user object:", user);
   return (
     <nav className={`${navbarBg} shadow-md sticky top-0 z-50`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
