@@ -12,15 +12,8 @@ export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const hasAccess =
     user &&
     (
-      (Array.isArray(user.tags) &&
-        (user.tags.includes("admin") ||
-         user.tags.includes("editor") ||
-         user.tags.includes("podcast")))
-      ||
-      (user.role === "admin" ||
-       user.role === "editor" ||
-       user.role === "podcast")
-    );
+      (user.role === "admin" 
+    ));
 
   useEffect(() => {
     if (!user) {
