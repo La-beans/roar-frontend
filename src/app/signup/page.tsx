@@ -24,8 +24,12 @@ export default function SignupPage() {
       if (!res.ok) throw new Error(data.error || "Signup failed");
       setSuccess("Signup successful! You can now log in.");
       setTimeout(() => router.push("/login"), 1500);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("Signup failed");
+      }
     }
   }
 

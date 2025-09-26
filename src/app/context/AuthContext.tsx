@@ -1,10 +1,23 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext<any>(null);
+type User = {
+  // Add more fields as needed
+  email: string;
+  // id?: number;
+  // name?: string;
+};
+
+type AuthContextType = {
+  user: User | null;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => void;
+};
+
+const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
 
   async function login(email: string, password: string) {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`, {
@@ -27,7 +40,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     setUser(data.user);
     localStorage.setItem("token", data.token);
-    return true;
+    //return true;
   }
 
   function logout() {
@@ -43,5 +56,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 }
 
 export function useAuth() {
-  return useContext(AuthContext);
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be used within AuthProvider");
+  return ctx;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { Target, Users, TrendingUp, BookOpen, Mic, Share2, Crosshair, Paintbrush } from "lucide-react";
+import { Target, Users, TrendingUp, BookOpen, Mic, Share2, Paintbrush } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-serif text-slate-800 mb-3">Media and Marketing</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Our media and marketing team drives engagement through creative campaigns, 
-                social media content, and interactive experiences that amplify ROAR's stories.
+                social media content, and interactive experiences that amplify ROAR&apos;s stories.
               </p>
             </div>
 
@@ -128,7 +128,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Design and Layout</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                The design and layout team shapes ROAR's bold visual identity, crafting 
+                The design and layout team shapes ROAR&apos;s bold visual identity, crafting 
                 layouts, graphics, and branded content that bring every story to life.
               </p>
             </div>

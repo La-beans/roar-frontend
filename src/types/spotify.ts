@@ -7,4 +7,5 @@ export interface SpotifyLink {
   url: string;
   guests?: string[];
   coverImage?: string;
+  videoLink?: string;
 }

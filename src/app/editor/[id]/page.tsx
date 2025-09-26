@@ -11,7 +11,6 @@ import {
   Smartphone,
   Save,
   Send,
-  Eye,
   Edit3,
   Trash2,
   ArrowUp,

@@ -5,7 +5,7 @@ import type { SpotifyLink } from "@/types/spotify";
 import { useUser } from "@/app/context/UserContext";
 
 export default function SpotifyPage() {
-  const [links, setLinks] = useState<any[]>([]);
+  const [links, setLinks] = useState<SpotifyLink[]>([]);
   const [loading, setLoading] = useState(true);
   const user = useUser();
 
@@ -27,14 +27,6 @@ export default function SpotifyPage() {
     fetchLinks();
   }, []);
 
-  // Only show published episodes for the logged-in podcast user
-  const myEpisodes = user?.role?.includes("admin")
-    ? links.filter(
-        (ep) =>
-          ep.authorId === user.id && ep.status === "published"
-      )
-    : links;
-
   return (
     <section className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
@@ -49,11 +41,11 @@ export default function SpotifyPage() {
         </div>
         {loading ? (
           <p className="text-center text-gray-500">Loading...</p>
-        ) : myEpisodes.length === 0 ? (
+        ) : links.length === 0 ? (
           <p className="text-center text-gray-500">No podcasts yet.</p>
         ) : (
           <div className="grid md:grid-cols-2 gap-8">
-            {myEpisodes.map((link) => (
+            {links.map((link) => (
               <div
                 key={link.id}
                 className="bg-white rounded-2xl shadow flex flex-col md:flex-row gap-6 p-6 hover:shadow-lg transition max-w-2xl"
@@ -70,7 +62,7 @@ export default function SpotifyPage() {
                 {/* Main Content */}
                 <div className="flex-1 flex flex-col">
                   <h2 className="text-2xl font-bold text-blue-900 mb-2">{link.title}</h2>
-                  <p className="text-gray-600 mb-4">{link.description}</p>
+                  <p className="text-gray-600 mb-4">{link.desc}</p>
                   <div className="flex items-center gap-6 text-gray-500 text-sm mb-2">
                     {link.duration && (
                       <span className="flex items-center gap-1">
@@ -78,10 +70,10 @@ export default function SpotifyPage() {
                         {link.duration}
                       </span>
                     )}
-                    {(link.date || link.episode_date) && (
+                    {(link.date || link.date) && (
                       <span className="flex items-center gap-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
-                        {new Date(link.date || link.episode_date).toLocaleDateString("en-GB")}
+                        {new Date(link.date || link.date).toLocaleDateString("en-GB")}
                       </span>
                     )}
                   </div>

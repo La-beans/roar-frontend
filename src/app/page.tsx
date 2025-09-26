@@ -48,7 +48,7 @@ export default function HomePage() {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/articles`);
         const data = await res.json();
         // Show all published articles (not filtering by featured)
-        const published = data.filter((a: any) => a.status === "published");
+        const published = data.filter((a: Article & { status: string }) => a.status === "published");
         setFeaturedArticles(published);
       } catch (err) {
         console.error("Error fetching featured articles:", err);
@@ -268,97 +268,69 @@ export default function HomePage() {
 
       {/* Latest Podcast Section */}
       <section className="px-6 py-16 bg-blue-900 flex flex-col md:flex-row items-center justify-center gap-12">
-        {/* Podcast Info */}
-        <div className="flex-1 max-w-xl">
-          <span className="bg-yellow-400 text-blue-900 font-bold px-4 py-2 rounded-full text-sm mb-4 inline-block">
-            LATEST EPISODE
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">ROAR Conversations</h2>
-          {latestPodcast ? (
-            <>
-              <h3 className="text-xl font-semibold mb-2">
-                Episode: {latestPodcast.title}
-              </h3>
-              <p className="text-gray-200 mb-6">{latestPodcast.description}</p>
-              <div className="flex items-center gap-6 mb-8">
-                {latestPodcast.duration && (
-                  <span className="flex items-center gap-2 text-yellow-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" strokeWidth="2"/><path strokeWidth="2" d="M12 6v6l4 2"/></svg>
-                    {latestPodcast.duration}
-                  </span>
-                )}
-                {/* Example rating, replace with real data if available */}
-                <span className="flex items-center gap-2 text-yellow-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="12 2 15 8.5 22 9.3 17 14.1 18.2 21 12 17.8 5.8 21 7 14.1 2 9.3 9 8.5 12 2" strokeWidth="2"/></svg>
-                  4.9 rating
-                </span>
-              </div>
-              <div className="flex gap-4">
-                <a
-                  href={latestPodcast.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-8 py-4 rounded-lg text-lg transition"
-                >
-                  Listen Now
-                </a>
-                <Link href="/podcast">
-                  <span className="bg-blue-800 border border-blue-400 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition cursor-pointer flex items-center">
-                    View All Episodes
-                  </span>
-                </Link>
-              </div>
-            </>
-          ) : (
-            <p className="text-gray-400">No podcast episodes yet.</p>
-          )}
+        {/* Left: Main Podcast */}
+        <div className="flex-1 max-w-md flex flex-col items-center bg-blue-800/60 rounded-2xl p-8 shadow-lg">
+          <img
+            src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
+            alt={latestPodcast?.title || "ROAR Podcast"}
+            className="w-64 h-64 rounded-2xl object-cover mb-6 border-4 border-yellow-400"
+          />
+          <h2 className="text-3xl md:text-4xl font-extrabold text-yellow-400 mb-2 text-center">
+            {latestPodcast?.title?.toUpperCase() || "ROAR PODCAST"}
+          </h2>
+          <p className="text-lg text-white mb-6 text-center">
+            Listen to the podcast on
+          </p>
+          <a
+            href={latestPodcast?.url || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
+          >
+            <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="12" fill="currentColor" />
+              <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
+            </svg>
+            Spotify
+          </a>
         </div>
-        {/* Podcast Player/Visual */}
-        <div className="flex-1 max-w-lg w-full">
-          <div className="bg-blue-800/60 rounded-2xl p-8 shadow-lg flex flex-col items-center">
-            {/* Podcast cover or fallback */}
-            {latestPodcast?.coverImage ? (
-              <img
-                src={latestPodcast.coverImage}
-                alt={latestPodcast.title}
-                className="w-32 h-32 rounded-full object-cover mb-6"
-              />
+
+        {/* Right: Latest Episodes */}
+        <div className="flex-1 max-w-2xl">
+          <h3 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-8 text-center md:text-left">
+            Latest Episodes
+          </h3>
+          <div className="flex flex-col gap-8">
+            {latestPodcast ? (
+              // If you want to show more than one episode, map over an array of podcasts here
+              <div className="flex gap-6 items-start bg-blue-800/40 rounded-xl p-4 shadow">
+                <img
+                  src={latestPodcast.coverImage || "/covers/podcast.webp"}
+                  alt={latestPodcast.title}
+                  className="w-24 h-24 rounded-xl object-cover border-2 border-yellow-400"
+                />
+                <div>
+                  <h4 className="text-xl font-bold text-white mb-2">
+                    {latestPodcast.title}
+                  </h4>
+                  <p className="text-white mb-2">
+                    {latestPodcast.description?.slice(0, 160) || "No description available."}
+                  </p>
+                  <span className="text-yellow-300 text-sm">
+                    {latestPodcast.duration || ""}
+                  </span>
+                </div>
+              </div>
             ) : (
-              <div className="w-32 h-32 rounded-full bg-yellow-400 flex items-center justify-center mb-6">
-                <svg className="w-16 h-16 text-blue-900" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="#fff"/></svg>
-              </div>
+              <p className="text-gray-400">No podcast episodes yet.</p>
             )}
-            <div className="text-lg font-bold mb-2 text-white">
-              {latestPodcast?.title || "ROAR Conversations"}
-            </div>
-            <div className="text-gray-300 mb-4 text-center">
-              {latestPodcast?.description?.slice(0, 60) || "Building Community in Digital Spaces"}
-            </div>
-            {/* Fake player bar */}
-            <div className="w-full flex items-center gap-2 mb-6">
-              <span className="text-gray-400 text-xs">{latestPodcast?.duration ? "00:00" : ""}</span>
-              <div className="flex-1 h-2 bg-gray-600 rounded-full overflow-hidden">
-                <div className="h-full bg-yellow-400" style={{ width: "40%" }} />
-              </div>
-              <span className="text-gray-400 text-xs">{latestPodcast?.duration || ""}</span>
-            </div>
-            {/* Player controls (visual only) */}
-            <div className="flex items-center gap-6 mb-6">
-              <button className="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-yellow-400">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="16 18 10 12 16 6" /></svg>
-              </button>
-              <button className="w-14 h-14 rounded-full bg-yellow-400 flex items-center justify-center text-blue-900">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><polygon points="8 5 19 12 8 19 8 5" /></svg>
-              </button>
-              <button className="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-yellow-400">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polygon points="8 6 14 12 8 18" /></svg>
-              </button>
-            </div>
-            {/* Platform buttons */}
-            <div className="flex gap-4">
-              <a href={latestPodcast?.url} target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-6 py-2 rounded-lg font-semibold">Spotify</a>
-              {/* Add Apple/Google links if available in your data */}
-            </div>
+          </div>
+          <div className="flex justify-end mt-8">
+            <Link href="/podcast">
+              <span className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-8 py-3 rounded-full text-lg transition cursor-pointer">
+                View All Episodes
+              </span>
+            </Link>
           </div>
         </div>
       </section>
@@ -371,8 +343,8 @@ export default function HomePage() {
           </h2>
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
             ROAR Digital Media Hub was born from the belief that every student
-            has a story worth telling. We're not just another media
-            platform—we're a movement dedicated to showcasing the authentic
+            has a story worth telling. We&apos;re not just another media
+            platform—we&apos;re a movement dedicated to showcasing the authentic
             experiences, innovative ideas, and powerful voices that define Gen
             Z.
           </p>
