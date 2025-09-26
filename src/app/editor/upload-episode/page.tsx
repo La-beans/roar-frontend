@@ -28,7 +28,7 @@ export default function UploadEpisodePage() {
     if (match) url = match[1];
 
     try {
-      const res = await fetch("http://localhost:5000/api/spotify", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/spotify`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
