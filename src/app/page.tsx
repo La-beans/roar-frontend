@@ -61,7 +61,7 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchLatestPodcast() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/spotify-links?limit=1&sort=desc`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/spotify?limit=1&sort=desc`);
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
           setLatestPodcast(data[0]);
