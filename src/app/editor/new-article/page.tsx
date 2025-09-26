@@ -284,7 +284,7 @@ export default function NewArticlePage() {
                 onChange={(e) => setAuthor(e.target.value)}
               />
               <Input
-                placeholder="Date"
+                placeholder="Date: eg 2025-12-31"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
               />

@@ -153,7 +153,8 @@ export default function UploadEpisodePage() {
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
-        {/* Cover Image */}
+        
+        {/* Cover Image */} for upload episodes
         <div>
           <label className="block font-semibold mb-2 text-gray-700">Cover Image URL</label>
           <input
@@ -164,6 +165,7 @@ export default function UploadEpisodePage() {
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
+
         {/* Submit */}
         <button
           type="submit"

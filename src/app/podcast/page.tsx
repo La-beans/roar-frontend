@@ -53,7 +53,11 @@ export default function SpotifyPage() {
                 {/* Cover Image */}
                 <div className="relative w-full md:w-48 flex-shrink-0">
                   <img
-                    src={link.coverImage}
+                    src={
+                      link.coverImage
+                        ? `${process.env.NEXT_PUBLIC_API_URL}/covers/${link.coverImage}`
+                        : "/covers/roar podcast.png"
+                    }
                     alt={link.title}
                     
                     className="rounded-xl w-full h-40 object-cover"
