@@ -297,7 +297,7 @@ export default function HomePage() {
               Spotify
             </a>
             <a
-              href={latestPodcast?.videoLink || "https://youtu.be/7ZgRO4jJQyY?si=NWbNiGUR4FdrSTlct"}
+              href={latestPodcast?.videoLink || "http://www.youtube.com/@RoarDigitalMediaHub"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
