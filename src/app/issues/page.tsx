@@ -33,15 +33,7 @@ const issues: Issue[] = [
     coverImage: "/covers/Issue 2.png",
     link: "https://online.visual-paradigm.com/share/book/roar-magazine-issue-2---flipping-book-1w43yg6gax",
   },
-  {
-    id: "003",
-    title: "Voices Rising",
-    description: "Amplifying diverse perspectives and untold stories from our community.",
-    season: "Spring",
-    year: "2024",
-    coverImage: "/covers/Issue 3.png",
-    link: "https://online.visual-paradigm.com/share/book/roar-magazine-issue-2---flipping-book-1w43yg6gax",
-  },
+  
 ];
 
 export default function IssuesPage() {
