@@ -282,7 +282,7 @@ export default function HomePage() {
             Listen to the podcast on
           </p>
           <a
-            href={latestPodcast?.url || "#"}
+            href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 border-2 border-yellow-400 text-yellow-400 font-bold px-8 py-3 rounded-full text-lg hover:bg-yellow-400 hover:text-blue-900 transition"
