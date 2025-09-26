@@ -12,6 +12,7 @@ interface Article {
   title: string;
   author: string;
   coverImage?: string;
+  pdfFile?: string;
 }
 
 interface Podcast {
@@ -248,12 +249,21 @@ export default function HomePage() {
                         </div>
                         <div className="flex items-center justify-between">
                           <div className="text-gray-500 text-sm">Dec 18, 2024</div>
-                          <span className="text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 flex items-center gap-1">
+                          <a
+                            href={
+                              article.pdfFile
+                                ? `${process.env.NEXT_PUBLIC_API_URL}/pdfs/${article.pdfFile}`
+                                : "#"
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 font-semibold text-sm transition-colors duration-200 flex items-center gap-1"
+                          >
                             Read More
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
-                          </span>
+                          </a>
                         </div>
                       </div>
                     </div>

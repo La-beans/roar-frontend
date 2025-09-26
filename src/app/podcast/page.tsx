@@ -53,7 +53,7 @@ export default function SpotifyPage() {
                 {/* Cover Image */}
                 <div className="relative w-full md:w-48 flex-shrink-0">
                   <img
-                    src={link.coverImage || "../covers/podcast.webp"}
+                    src={link.coverImage}
                     alt={link.title}
                     
                     className="rounded-xl w-full h-40 object-cover"
