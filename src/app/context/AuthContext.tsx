@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from "react";
 type User = {
   // Add more fields as needed
   email: string;
+  role?: string;
   // id?: number;
   // name?: string;
 };
