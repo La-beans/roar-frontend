@@ -293,6 +293,18 @@ export default function HomePage() {
             </svg>
             Spotify
           </a>
+          <a
+            href="https://www.youtube.com/@roarpodcast" // <-- your YouTube channel or video link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-red-600 hover:text-white transition"
+          >
+            <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <rect x="2" y="6" width="20" height="12" rx="3" fill="currentColor"/>
+              <polygon points="10,9 16,12 10,15" fill="#fff"/>
+            </svg>
+            YouTube
+          </a>
         </div>
 
         {/* Right: Latest Episodes */}
