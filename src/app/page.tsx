@@ -217,7 +217,7 @@ export default function HomePage() {
                 const colorScheme = colorSchemes[index % colorSchemes.length];
 
                 return (
-                  
+                  <div key={article.id}>
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer">
                       <div className="relative aspect-[4/3] w-full overflow-hidden">
                         {article.coverImage ? (
@@ -292,7 +292,7 @@ export default function HomePage() {
                         </div>
                       </div>
                     </div>
-                  
+                  </div>
                 );
               })}
             </div>
