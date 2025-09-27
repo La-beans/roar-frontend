@@ -96,7 +96,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-blue-900 text-white">
+    <div className="min-h-screen w-full bg-red-900 text-white">
       {/* Hero Section */}
       <section className="relative px-6 py-20 text-center overflow-hidden">
         {/* Slideshow background */}
@@ -109,7 +109,7 @@ export default function HomePage() {
             className={`object-cover object-center absolute inset-0 transition-opacity duration-500 opacity-60 ${isFading ? "opacity-0" : "opacity-60"}`}
             style={{ zIndex: 0 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-800/60 to-blue-900/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-red-800/60 to-red-900/80" />
         </div>
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto">
@@ -137,7 +137,7 @@ export default function HomePage() {
       {/* Action Cards */}
       <section className="px-6 py-16">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-          <Card className="bg-blue-800/50 border-blue-700">
+          <Card className="bg-red-800/50 border-red-700">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="w-8 h-8 text-black" />
@@ -155,7 +155,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-blue-800/50 border-blue-700">
+          <Card className="bg-red-800/50 border-red-700">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Headphones className="w-8 h-8 text-black" />
@@ -173,7 +173,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-blue-800/50 border-blue-700">
+          <Card className="bg-red-800/50 border-red-700">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-black" />
@@ -194,7 +194,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Stories */}
-      <section className="px-6 py-16 bg-blue-800/40">
+      <section className="px-6 py-16 bg-red-800/40">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured Stories
@@ -303,9 +303,9 @@ export default function HomePage() {
       </section>
 
       {/* Latest Podcast Section */}
-      <section className="px-6 py-16 bg-blue-900 flex flex-col md:flex-row items-center justify-center gap-12">
+      <section className="px-6 py-16 bg-red-900 flex flex-col md:flex-row items-center justify-center gap-12">
         {/* Left: Main Podcast */}
-        <div className="flex-1 max-w-md flex flex-col items-center bg-blue-800/60 rounded-2xl p-8 shadow-lg">
+        <div className="flex-1 max-w-md flex flex-col items-center bg-red-800/60 rounded-2xl p-8 shadow-lg">
           <img
             src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
             alt={latestPodcast?.title || "ROAR Podcast"}
@@ -355,7 +355,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-8">
             {latestPodcast ? (
               // If you want to show more than one episode, map over an array of podcasts here
-              <div className="flex gap-6 items-start bg-blue-800/40 rounded-xl p-4 shadow">
+              <div className="flex gap-6 items-start bg-red-800/40 rounded-xl p-4 shadow">
                 <img
                   src={latestPodcast.coverImage || "/covers/podcast.webp"}
                   alt={latestPodcast.title}
@@ -379,7 +379,7 @@ export default function HomePage() {
           </div>
           <div className="flex justify-end mt-8">
             <Link href="/podcast">
-              <span className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold px-8 py-3 rounded-full text-lg transition cursor-pointer">
+              <span className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-8 py-3 rounded-full text-lg transition cursor-pointer">
                 View All Episodes
               </span>
             </Link>
@@ -410,7 +410,7 @@ export default function HomePage() {
             <Link href="/contact">
               <Button
                 variant="outline"
-                className="border-white text-blue-900 hover:bg-gray-300 hover:text-blue-900 px-8 py-3"
+                className="border-white text-gray-900 hover:bg-gray-300 hover:text-red-900 px-8 py-3"
               >
                 Meet the Team
               </Button>
