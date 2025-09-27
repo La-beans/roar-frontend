@@ -13,6 +13,8 @@ interface Article {
   author: string;
   coverImage?: string;
   pdfFile?: string;
+  date?: string // <-- Add date field
+
 }
 
 interface Podcast {
@@ -252,7 +254,15 @@ export default function HomePage() {
                           <div className="text-gray-500 text-sm">5 min read</div>
                         </div>
                         <div className="flex items-center justify-between">
-                          <div className="text-gray-500 text-sm">Dec 18, 2024</div>
+                           {article.date && (
+                            <p className="text-gray-500 text-sm mb-4">
+                              {new Date(article.date).toLocaleDateString(undefined, {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                              })}
+                            </p>
+                          )}
                           <a
                             href={
                               article.pdfFile
