@@ -136,8 +136,8 @@ export default function NewArticlePage() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-3">
+      <header className="bg-white border-b border-gray-200 px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div className="flex items-center gap-3 w-full md:w-auto">
           <Button
             variant="ghost"
             size="sm"
@@ -151,8 +151,8 @@ export default function NewArticlePage() {
         </div>
 
         {/* Device Switcher + Save Actions */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center bg-gray-100 rounded-lg p-1">
+        <div className="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto">
+          <div className="flex items-center bg-gray-100 rounded-lg p-1 mb-2 md:mb-0">
             <Button
               variant={selectedDevice === "desktop" ? "default" : "ghost"}
               size="sm"
@@ -176,12 +176,12 @@ export default function NewArticlePage() {
             </Button>
           </div>
 
-          <Button variant="outline" size="sm" onClick={() => saveArticle("draft")}>
+          <Button variant="outline" size="sm" className="w-full md:w-auto" onClick={() => saveArticle("draft")}>
             <Save className="w-4 h-4 mr-1" /> Save
           </Button>
           <Button
             size="sm"
-            className="bg-gray-800 hover:bg-gray-900 text-white"
+            className="bg-gray-800 hover:bg-gray-900 text-white w-full md:w-auto"
             onClick={() => saveArticle("published")}
           >
             <Send className="w-4 h-4 mr-1" /> Publish
@@ -195,25 +195,23 @@ export default function NewArticlePage() {
         onChangeTab={setActiveToolbarTab}
         selectedFont={selectedFont}
         selectedColor={selectedColor}
-        //selectedBgColor="#FFFFFF"
       />
 
       {/* Workspace */}
-      <div className="flex flex-1">
-        {/* Sidebar (controlled by toolbar) */}
+      <div className="flex flex-1 flex-col md:flex-row">
+        {/* Sidebar */}
         <BlockSidebar
           onAddBlock={handleAddBlock}
           activeTab={activeToolbarTab}
           selectedFont={selectedFont}
           setSelectedFont={setSelectedFont}
           setSelectedColor={setSelectedColor}
-          //setSelectedBgColor={() => {}}
         />
 
         {/* Editor Canvas */}
-        <main className="flex-1 bg-gray-50 p-6 flex justify-center overflow-auto">
+        <main className="flex-1 bg-gray-50 p-2 md:p-6 flex justify-center overflow-auto">
           <div
-            className={`${previewWidth} bg-white rounded-lg shadow-sm border border-gray-200 p-6`}
+            className={`w-full max-w-full md:${previewWidth} bg-white rounded-lg shadow-sm border border-gray-200 p-2 md:p-6`}
             style={{ fontFamily: selectedFont, color: selectedColor }}
             id="editor-canvas"
           >
@@ -231,7 +229,6 @@ export default function NewArticlePage() {
                       className="object-contain max-w-full max-h-full"
                     />
                   </div>
-                  {/* Scaling control */}
                   <input
                     type="range"
                     min="200"
@@ -243,7 +240,7 @@ export default function NewArticlePage() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="mt-2"
+                    className="mt-2 w-full md:w-auto"
                     onClick={() => {
                       setCoverImage(null);
                       setCoverImageFile(null);
@@ -272,21 +269,24 @@ export default function NewArticlePage() {
             </div>
 
             {/* Article Header */}
-            <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               <Input
                 placeholder="Article Title"
                 value={articleTitle}
                 onChange={(e) => setArticleTitle(e.target.value)}
+                className="w-full"
               />
               <Input
                 placeholder="Author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                className="w-full"
               />
               <Input
                 placeholder="Date: eg 2025-12-31"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
+                className="w-full"
               />
             </div>
 
