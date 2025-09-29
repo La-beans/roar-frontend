@@ -56,7 +56,7 @@ export default function IssuesPage() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               {/* Cover Image with Gradient and Logo */}
-              <div className="relative h-115 bg-gradient-to-br from-yellow-400 via-orange-400 to-blue-900 flex items-center justify-center">
+              <div className="relative h-115 bg-gradient-to-br from-pink-400 via-orange-400 to-blue-900 flex items-center justify-center">
                 <Image
                   src={issue.coverImage}
                   alt={issue.title}
@@ -76,7 +76,7 @@ export default function IssuesPage() {
 
                 <p className="text-gray-600 mb-4 leading-relaxed">{issue.description}</p>
 
-                <p className="text-yellow-600 font-semibold mb-6">
+                <p className="text-pink-400 font-semibold mb-6">
                   {issue.season} {issue.year}
                 </p>
 

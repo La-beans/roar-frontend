@@ -32,7 +32,7 @@ export default function Navbar(): JSX.Element {
   ];
 
   // Set navbar background based on route
-  const navbarBg = pathname === "/" ? "bg-red-900" : "bg-white";
+  const navbarBg = pathname === "/" ? "bg-red-600" : "bg-red-600";
 
   // Filter links: students don’t see adminOnly links
   const visibleLinks = links.filter((link) => 
@@ -49,7 +49,7 @@ export default function Navbar(): JSX.Element {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src="/logo.png" alt="Logo" className="h-8 w-8" />
+          <img src="../covers/logo.png" alt="Logo" className="h-8 w-8" />
           <span className="font-serif font-bold text-xl text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text animate-pulse">
             ROAR
           </span>
@@ -63,17 +63,17 @@ export default function Navbar(): JSX.Element {
               href={link.path}
               className={`relative flex items-center space-x-1 px-3 py-2 transition ${
                 pathname === link.path
-                  ? "text-yellow-300 font-semibold"
+                  ? "text-white font-semibold"
                   : pathname === "/"
-                  ? "text-white hover:text-yellow-300"
-                  : "text-gray-700 hover:text-yellow-600"
+                  ? "text-white hover:text-pink-300"
+                  : "text-white hover:text-pink-300"
               }`}
             >
               {link.icon && link.icon}
               <span>{link.name}</span>
               {/* Active underline */}
               {pathname === link.path && (
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-300 rounded transition-all duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded transition-all duration-300"></span>
               )}
             </Link>
           ))}
@@ -91,7 +91,7 @@ export default function Navbar(): JSX.Element {
           ) : (
             <Link
               href="/login"
-              className="text-sm px-3 py-2 rounded bg-yellow-500 text-black hover:bg-yellow-600"
+              className="text-sm px-3 py-2 rounded bg-gray-900 text-white hover:bg-gray-400"
             >
               Login
             </Link>

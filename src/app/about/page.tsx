@@ -54,7 +54,7 @@ export default function AboutPage() {
 
             {/* Our Community */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Community</h2>
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
             {/* Podcast Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mic className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Podcast</h3>
@@ -123,7 +123,7 @@ export default function AboutPage() {
 
             {/* Marketing Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Paintbrush className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Design and Layout</h3>
