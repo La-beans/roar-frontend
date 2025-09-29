@@ -281,7 +281,7 @@ export default function HomePage() {
           {/* Podcast Details */}
           <div className="flex-1">
             <h3 className="text-3xl font-bold text-red-600 mb-8 text-center md:text-left">
-              Latest Episodes
+              Latest Episode
             </h3>
             {latestPodcast ? (
               <div className="flex gap-6 items-start bg-red-600 rounded-xl p-4 shadow">

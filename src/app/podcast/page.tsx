@@ -56,7 +56,7 @@ export default function SpotifyPage() {
                     src={
                       link.coverImage
                         ? `${process.env.NEXT_PUBLIC_API_URL}/covers/${link.coverImage}`
-                        : "/covers/roar podcast.png"
+                        : "../covers/roar podcast.png"
                     }
                     alt={link.title}
                     
