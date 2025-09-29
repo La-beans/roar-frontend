@@ -115,7 +115,7 @@ export default function HomePage() {
               }
             }}
           >
-            Explore stories
+            Explore
           </Button>
         </div>
       </section>
@@ -240,18 +240,18 @@ export default function HomePage() {
           <div className="bg-red-600 text-white p-8 rounded-lg max-w-md w-full flex flex-col items-center">
             <img
               src={"/covers/roar podcast.png"}
-              alt={latestPodcast?.title || "ROAR Podcast"}
+              alt={"ROAR Podcast"}
               className="w-64 h-64 rounded-2xl object-cover mb-6 border-4 border-gray-700"
             />
             <h2 className="text-2xl font-bold mb-2 text-center">
-              {latestPodcast?.title?.toUpperCase() || "ROAR PODCAST"}
+              {"ROAR PODCAST"}
             </h2>
             <p className="text-lg mb-6 text-center">
-              {latestPodcast?.description?.slice(0, 160) || "Listen to the latest episode!"}
+              {"Listen to the latest episode!"}
             </p>
             <div className="flex gap-4 mt-2">
               <a
-                href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+                href={"https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-white hover:text-green-600 transition"
@@ -264,7 +264,7 @@ export default function HomePage() {
                 Spotify
               </a>
               <a
-                href={latestPodcast?.videoLink || "http://www.youtube.com/@RoarDigitalMediaHub"}
+                href={"http://www.youtube.com/@RoarDigitalMediaHub"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 border-2 border-white text-white font-bold px-8 py-3 rounded-full text-lg hover:bg-white hover:text-red-600 transition"
@@ -300,6 +300,38 @@ export default function HomePage() {
                   <span className="text-gray-600 text-sm">
                     {latestPodcast.duration || ""}
                   </span>
+                </div>
+                <div className="flex gap-2 mt-2">
+                  {/* Spotify Button */}
+                  <a
+                    href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center border-2 border-green-600 bg-white text-green-600 font-bold px-3 py-2 rounded-full text-base hover:bg-green-600 hover:text-white transition"
+                    style={{ minWidth: "48px" }}
+                    title="Listen on Spotify"
+                  >
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="12" fill="#1DB954" />
+                      <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
+                    </svg>
+                  </a>
+                  {/* YouTube Button (only if videoLink exists) */}
+                  {latestPodcast?.videoLink && (
+                    <a
+                      href={latestPodcast.videoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center border-2 border-red-600 bg-white text-red-600 font-bold px-3 py-2 rounded-full text-base hover:bg-red-600 hover:text-white transition"
+                      style={{ minWidth: "48px" }}
+                      title="Watch on YouTube"
+                    >
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <rect x="2" y="6" width="20" height="12" rx="3" fill="#DC143C"/>
+                        <polygon points="10,9 16,12 10,15" fill="#fff"/>
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             ) : (
