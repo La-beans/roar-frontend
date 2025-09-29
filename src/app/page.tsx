@@ -79,8 +79,8 @@ export default function HomePage() {
       setTimeout(() => {
         setSlideIndex((prev) => (prev + 1) % heroImages.length);
         setIsFading(false);
-      }, 5000);
-    }, 8000);
+      }, 500);
+    }, 10000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
@@ -94,7 +94,7 @@ export default function HomePage() {
             alt="Hero background"
             fill
             priority
-            className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isFading ? "opacity-20" : "opacity-100"}`}
+            className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isFading ? "opacity-60" : "opacity-100"}`}
             style={{ zIndex: 0 }}
           />
         </div>
@@ -239,9 +239,9 @@ export default function HomePage() {
           {/* Podcast Card */}
           <div className="bg-red-600 text-white p-8 rounded-lg max-w-md w-full flex flex-col items-center">
             <img
-              src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
+              src={"/covers/roar podcast.png"}
               alt={latestPodcast?.title || "ROAR Podcast"}
-              className="w-64 h-64 rounded-2xl object-cover mb-6 border-4 border-yellow-400"
+              className="w-64 h-64 rounded-2xl object-cover mb-6 border-4 border-gray-700"
             />
             <h2 className="text-2xl font-bold mb-2 text-center">
               {latestPodcast?.title?.toUpperCase() || "ROAR PODCAST"}
@@ -284,11 +284,11 @@ export default function HomePage() {
               Latest Episodes
             </h3>
             {latestPodcast ? (
-              <div className="flex gap-6 items-start bg-red-800/40 rounded-xl p-4 shadow">
+              <div className="flex gap-6 items-start bg-red-600 rounded-xl p-4 shadow">
                 <img
-                  src={latestPodcast.coverImage}
+                  src={"/covers/roar podcast.png"}
                   alt={latestPodcast.title}
-                  className="w-24 h-24 rounded-xl object-cover border-2 border-yellow-400"
+                  className="w-24 h-24 rounded-xl object-cover border-2 border-gray-700"
                 />
                 <div>
                   <h4 className="text-xl font-bold text-white mb-2">
@@ -297,7 +297,7 @@ export default function HomePage() {
                   <p className="text-white mb-2">
                     {latestPodcast.description?.slice(0, 160) || "No description available."}
                   </p>
-                  <span className="text-yellow-300 text-sm">
+                  <span className="text-gray-600 text-sm">
                     {latestPodcast.duration || ""}
                   </span>
                 </div>
@@ -307,7 +307,7 @@ export default function HomePage() {
             )}
             <div className="flex justify-end mt-8">
               <Link href="/podcast">
-                <span className="bg-gray-700 hover:bg-yellow-500 text-white font-bold px-8 py-3 rounded-full text-lg transition cursor-pointer">
+                <span className="bg-gray-700 hover:bg-gray-400 text-white font-bold px-8 py-3 rounded-full text-lg transition cursor-pointer">
                   View All Episodes
                 </span>
               </Link>
