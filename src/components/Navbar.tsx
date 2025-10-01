@@ -111,7 +111,7 @@ export default function Navbar(): JSX.Element {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div
-          className={`md:hidden ${pathname === "/" ? "bg-red-900" : "bg-white"} border-t shadow-md`}
+          className={`md:hidden ${pathname === "/" ? "bg-red-500" : "bg-white"} border-t shadow-md`}
         >
           <div className="flex flex-col space-y-2 p-4">
             {visibleLinks.map((link) => (
@@ -121,16 +121,16 @@ export default function Navbar(): JSX.Element {
                 onClick={() => setIsOpen(false)} // close after click
                 className={`relative flex items-center space-x-2 px-3 py-2 rounded-md transition ${
                   pathname === link.path
-                    ? "text-yellow-300 font-semibold"
+                    ? "text-white font-semibold"
                     : pathname === "/"
-                    ? "text-white hover:text-yellow-300"
-                    : "text-gray-700 hover:text-yellow-600"
+                    ? "text-white hover:text-pink-300"
+                    : "text-white hover:text-pink-300"
                 }`}
               >
                 {link.icon && link.icon}
                 <span>{link.name}</span>
                 {pathname === link.path && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-yellow-300 rounded transition-all duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded transition-all duration-300"></span>
                 )}
               </Link>
             ))}
