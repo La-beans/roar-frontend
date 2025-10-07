@@ -31,7 +31,7 @@ export default function SpotifyPage() {
     <section className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-6xl font-serif font-bold text-slate-800 mb-4">
+          <h1 className="text-6xl font-serif font-bold text-[#2C3E50] mb-4">
             Podcasts
           </h1>
           <p className="text-lg text-gray-600 font-light">

@@ -34,7 +34,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-900">
+    <div className="min-h-screen flex items-center justify-center bg-[#A6192E]">
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md"
@@ -61,7 +61,7 @@ export default function SignupPage() {
 
         <button
           type="submit"
-          className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded"
+          className="w-full bg-[#EFB4BB] hover:bg-[#B5141B] text-black font-semibold px-4 py-2 rounded"
         >
           Sign Up
         </button>

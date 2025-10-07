@@ -7,7 +7,7 @@ export default function ContactPage() {
       <div className="container mx-auto px-6 py-16">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-serif text-blue-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-serif text-[#2C3E50] mb-6">
             Let&apos;s Connect
           </h1>
           <p className="text-lg text-slate-800 max-w-2xl mx-auto leading-relaxed">

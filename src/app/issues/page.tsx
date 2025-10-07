@@ -42,7 +42,7 @@ export default function IssuesPage() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-serif font-bold text-slate-800 mb-4">The Issues</h1>
+          <h1 className="text-6xl font-serif font-bold text-[#2C3E50] mb-4">The Issues</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Explore our collection of digital magazine issues, each telling unique stories from our community
           </p>

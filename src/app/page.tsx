@@ -97,6 +97,7 @@ export default function HomePage() {
             className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isFading ? "opacity-60" : "opacity-100"}`}
             style={{ zIndex: 0 }}
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#A6192E]/70 to-[#B5141B]/80 z-10 pointer-events-none" />
         </div>
         <div className="relative z-20 max-w-4xl px-6">
           <h1 className="text-5xl xs:text-7xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text mb-4">
@@ -118,15 +119,16 @@ export default function HomePage() {
             Explore
           </Button>
         </div>
+        
       </section>
 
       {/* Action Cards Section */}
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-3">
           {/* Read the Magazine Card */}
-          <div className="bg-red-600 text-white p-6 md:p-8 rounded-lg">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-red-600" />
+              <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Read the Magazine</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -134,7 +136,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/magazine">
-                <Button variant="outline" className="bg-white text-red-600 hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Explore articles
                 </Button>
               </Link>
@@ -142,9 +144,9 @@ export default function HomePage() {
           </div>
 
           {/* Listen to the Podcast Card */}
-          <div className="bg-red-600 text-white p-6 md:p-8 rounded-lg">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <Headphones className="w-7 h-7 md:w-8 md:h-8 text-red-600" />
+              <Headphones className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Listen to the Podcast</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -152,7 +154,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/podcast">
-                <Button variant="outline" className="bg-white text-red-600 hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Listen now
                 </Button>
               </Link>
@@ -160,9 +162,9 @@ export default function HomePage() {
           </div>
 
           {/* Reach out to the Team Card */}
-          <div className="bg-red-600 text-white p-6 md:p-8 rounded-lg">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <Users className="w-7 h-7 md:w-8 md:h-8 text-red-600" />
+              <Users className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Reach out to the Team</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -170,7 +172,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/contact">
-                <Button variant="outline" className="bg-white text-red-600 hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Get connected
                 </Button>
               </Link>
@@ -180,9 +182,9 @@ export default function HomePage() {
       </section>
 
       {/* Featured Stories Section */}
-      <section id="featured-stories" className="py-12 px-4 md:px-6 bg-red-600">
+      <section id="featured-stories" className="py-12 px-4 md:px-6 bg-[#A6192E]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-gray-900">Featured Stories</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-[#2C3E50]">Featured Stories</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {featuredArticles.length > 0 ? (
               featuredArticles.map((article) => (
@@ -219,7 +221,7 @@ export default function HomePage() {
                       }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-2 rounded-lg mt-2 text-sm md:text-base"
+                      className="inline-block bg-[#B5141B] hover:bg-[#A6192E] text-white font-semibold px-6 py-2 rounded-lg mt-2 text-sm md:text-base"
                     >
                       Read More
                     </a>
@@ -237,9 +239,9 @@ export default function HomePage() {
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Podcast Card */}
-          <div className="bg-red-600 text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0">
             <img
-              src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
+              src={"/covers/roar podcast.png"}
               alt={latestPodcast?.title || "ROAR Podcast"}
               className="w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover mb-4 md:mb-6 border-4 border-gray-700"
             />
@@ -251,7 +253,7 @@ export default function HomePage() {
             </p>
             <div className="flex gap-3 mt-2">
               <a
-                href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+                href={"https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center border-2 border-green-600 bg-white text-green-600 font-bold px-5 py-2 rounded-full text-base hover:bg-green-600 hover:text-white transition"
@@ -263,30 +265,30 @@ export default function HomePage() {
                   <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
                 </svg>
               </a>
-              {latestPodcast?.videoLink && (
-                <a
-                  href={latestPodcast.videoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center border-2 border-red-600 bg-white text-red-600 font-bold px-5 py-2 rounded-full text-base hover:bg-red-600 hover:text-white transition"
-                  style={{ minWidth: "48px" }}
-                  title="Watch on YouTube"
-                >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <rect x="2" y="6" width="20" height="12" rx="3" fill="#DC143C"/>
-                    <polygon points="10,9 16,12 10,15" fill="#fff"/>
-                  </svg>
-                </a>
-              )}
+              
+              <a
+                href={"http://www.youtube.com/@RoarDigitalMediaHub"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center border-2 border-red-600 bg-white text-red-600 font-bold px-5 py-2 rounded-full text-base hover:bg-red-600 hover:text-white transition"
+                style={{ minWidth: "48px" }}
+                title="Watch on YouTube"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <rect x="2" y="6" width="20" height="12" rx="3" fill="#DC143C"/>
+                  <polygon points="10,9 16,12 10,15" fill="#fff"/>
+                </svg>
+              </a>
+              
             </div>
           </div>
           {/* Podcast Details */}
           <div className="flex-1 w-full">
-            <h3 className="text-2xl md:text-3xl font-bold text-red-600 mb-6 text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#A6192E] mb-6 text-center md:text-left">
               Latest Episode
             </h3>
             {latestPodcast ? (
-              <div className="flex flex-col sm:flex-row gap-4 items-center bg-red-600 rounded-xl p-4 shadow">
+              <div className="flex flex-col sm:flex-row gap-4 items-center bg-[#A6192E] rounded-xl p-4 shadow">
                 <img
                   src={latestPodcast.coverImage || "/covers/roar podcast.png"}
                   alt={latestPodcast.title}
@@ -359,8 +361,10 @@ export default function HomePage() {
             className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isFading ? "opacity-20" : "opacity-100"}`}
             style={{ zIndex: 0 }}
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-red-700/70 to-red-900/80 z-10 pointer-events-none" />
         </div>
         <div className="relative z-20 max-w-4xl mx-auto">
+          
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Amplifying <span className="text-red-400">Student Stories</span>
           </h2>
@@ -368,7 +372,7 @@ export default function HomePage() {
             ROAR Digital Media Hub was born from the belief that every student has a story worth telling. Through our magazine, podcast, and digital platforms, we highlight student voices and celebrate the campus experience.
           </p>
         </div>
-      </section>
+        </section>
     </div>
   );
 }

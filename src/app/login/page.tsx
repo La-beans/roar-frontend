@@ -27,7 +27,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-900">
+    <div className="min-h-screen flex items-center justify-center bg-[#A6192E]">
       <form
         onSubmit={handleSubmit}
         className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md"
@@ -55,14 +55,14 @@ export default function LoginPage() {
         {/* Sign up link */}
         <div className="mb-4 text-center">
           <span className="text-gray-600">Don&apos;t have an account? </span>
-          <Link href="/signup" className="text-blue-600 hover:underline">
+          <Link href="/signup" className="text-[#0e20df] hover:underline">
             Sign up
           </Link>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-4 py-2 rounded"
+          className="w-full bg-[#EFB4BB] hover:bg-[#B5141B] text-black font-semibold px-4 py-2 rounded"
         >
           Login
         </button>

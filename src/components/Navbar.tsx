@@ -32,7 +32,7 @@ export default function Navbar(): JSX.Element {
   ];
 
   // Set navbar background based on route
-  const navbarBg = pathname === "/" ? "bg-red-600" : "bg-red-600";
+  const navbarBg = pathname === "/" ? "bg-[#A6192E]" : "bg-[#A6192E]";
 
   // Filter links: students don’t see adminOnly links
   const visibleLinks = links.filter((link) => 
@@ -84,7 +84,7 @@ export default function Navbar(): JSX.Element {
           {user ? (
             <button
               onClick={logout}
-              className="text-sm px-3 py-2 rounded bg-red-500 text-white hover:bg-red-600"
+              className="text-sm px-3 py-2 rounded bg-[#A6192E] text-white hover:bg-[#B5141B]"
             >
               Logout
             </button>
@@ -111,7 +111,7 @@ export default function Navbar(): JSX.Element {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div
-          className={`md:hidden ${pathname === "/" ? "bg-red-500" : "bg-white"} border-t shadow-md`}
+          className={`md:hidden ${pathname === "/" ? "bg-[#A6192E]" : "bg-white"} border-t shadow-md`}
         >
           <div className="flex flex-col space-y-2 p-4">
             {visibleLinks.map((link) => (

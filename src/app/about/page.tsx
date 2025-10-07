@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="py-16 px-4 max-w-4xl mx-auto text-center">
-        <h1 className="text-5xl md:text-6xl font-serif text-blue-900 mb-8 leading-tight">
+        <h1 className="text-5xl md:text-6xl font-serif text-[#2C3E50] mb-8 leading-tight">
           This Is ROAR
         </h1>
 

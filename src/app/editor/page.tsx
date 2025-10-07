@@ -81,7 +81,7 @@ export default function EditorStudioPage() {
     <ProtectedRoute>
       <section className="max-w-6xl mx-auto py-12 px-6">
         {/* Header Banner */}
-        <div className="bg-gradient-to-r from-yellow-400 to-blue-900 text-white rounded-xl p-8 flex justify-between items-center mb-10">
+        <div className="bg-gradient-to-r from-[#2C3E50] to-blue-900 text-white rounded-xl p-8 flex justify-between items-center mb-10">
           <div>
             <h1 className="text-3xl font-bold">Welcome back, {isAdmin ? "Admin" : "Student"} 👋</h1>
             <p className="mt-2 text-lg">Section: Wagwan</p>
@@ -96,10 +96,10 @@ export default function EditorStudioPage() {
               href="/editor/new-article"
               className="bg-white p-6 rounded-xl shadow hover:shadow-lg flex flex-col items-center justify-center text-center transition"
             >
-              <div className="bg-yellow-100 text-yellow-600 p-4 rounded-full mb-4">
+              <div className="bg-yellow-100 text-[#2C3E50] p-4 rounded-full mb-4">
                 <PenLine size={28} />
               </div>
-              <h2 className="text-xl font-bold text-blue-900 mb-2">Write New Magazine</h2>
+              <h2 className="text-xl font-bold text-[#2C3E50] mb-2">Write New Magazine</h2>
               <p className="text-gray-600">Create engaging magazine content</p>
             </Link>
           
