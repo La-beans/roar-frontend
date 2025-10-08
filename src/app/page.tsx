@@ -215,15 +215,14 @@ export default function HomePage() {
                   className="reveal bg-white rounded-lg overflow-hidden opacity-0 translate-y-4 transition-all duration-500 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)]"
                 >
                   <div className="relative aspect-[3/4] mb-4 rounded-lg overflow-hidden">
-                    <Image
+                    <img
                       src={
                         article.coverImage
                           ? `${process.env.NEXT_PUBLIC_API_URL}/covers/${article.coverImage}`
-                          : "/placeholder.svg"
+                          : "/covers/roar podcast.png"
                       }
                       alt={article.title}
-                      fill
-                      className="object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   </div>
                   <div className="px-4 pb-4">
@@ -294,7 +293,7 @@ export default function HomePage() {
               {/* YouTube button shows only if videoLink exists */}
               
               <a
-                href={"https://www.youtube.com/@roardigitalmedia"}
+                href={latestPodcast?.videoLink || "http://www.youtube.com/@RoarDigitalMediaHub"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center border-2 border-red-600 bg-white text-red-600 font-bold px-5 py-2 rounded-full text-base hover:bg-red-600 hover:text-white transition"

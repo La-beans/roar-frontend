@@ -67,7 +67,7 @@ export default function MagazinePage() {
                     src={
                       article.coverImage
                         ? `${process.env.NEXT_PUBLIC_API_URL}/covers/${article.coverImage}`
-                        : "/placeholder.svg"
+                        : "/covers/roar podcast.png"
                     }
                     alt={article.title}
                     className="absolute inset-0 w-full h-full object-cover"
