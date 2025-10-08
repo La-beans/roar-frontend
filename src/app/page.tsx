@@ -84,6 +84,26 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
+  // Reveal-on-scroll (IntersectionObserver)
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    if (!els.length) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-4");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [featuredArticles.length]);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -97,36 +117,38 @@ export default function HomePage() {
             className={`object-cover object-center absolute inset-0 transition-opacity duration-500 ${isFading ? "opacity-60" : "opacity-100"}`}
             style={{ zIndex: 0 }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#A6192E]/70 to-[#B5141B]/80 z-10 pointer-events-none" />
+          {/* red overlay behind text */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#A6192E]/50 to-[#B5141B]/55 z-10 pointer-events-none" />
         </div>
+
         <div className="relative z-20 max-w-4xl px-6">
-          <h1 className="text-5xl xs:text-7xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600 bg-clip-text mb-4">
-            ROAR
-          </h1>
-          <h2 className="text-2xl md:text-4xl font-bold mb-6">Digital Media Hub</h2>
-          <p className="text-base md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Welcome to Roar! Discover a truth — step into a world where creativity comes alive through words and voices!
-          </p>
-          <Button
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 md:py-6 text-lg font-semibold"
-            onClick={() => {
-              const el = document.getElementById("featured-stories");
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            Explore
-          </Button>
+          {/* darker panel behind text for readability */}
+          <div className="bg-black/50 backdrop-blur-sm rounded-xl p-6 md:p-10 inline-block text-center">
+            <h1 className="text-5xl xs:text-7xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-[#A6192E] via-[#B5141B] to-[#B5141B] bg-clip-text mb-4">
+              ROAR
+            </h1>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Digital Media Hub</h2>
+            <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
+              Welcome to Roar! Discover a truth — step into a world where creativity comes alive through words and voices!
+            </p>
+            <Button
+              className="bg-[#B5141B] hover:bg-[#A6192E] text-white px-6 py-3 md:px-8 md:py-4 text-lg font-semibold"
+              onClick={() => {
+                const el = document.getElementById("featured-stories");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Explore
+            </Button>
+          </div>
         </div>
-        
       </section>
 
       {/* Action Cards Section */}
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-3">
           {/* Read the Magazine Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
               <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
@@ -144,7 +166,7 @@ export default function HomePage() {
           </div>
 
           {/* Listen to the Podcast Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
               <Headphones className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
@@ -162,7 +184,7 @@ export default function HomePage() {
           </div>
 
           {/* Reach out to the Team Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
               <Users className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
             </div>
@@ -188,7 +210,10 @@ export default function HomePage() {
           <div className="grid gap-6 md:grid-cols-3">
             {featuredArticles.length > 0 ? (
               featuredArticles.map((article) => (
-                <div key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div
+                  key={article.id}
+                  className="reveal bg-white rounded-lg overflow-hidden opacity-0 translate-y-4 transition-all duration-500 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)]"
+                >
                   <div className="relative aspect-[3/4] mb-4 rounded-lg overflow-hidden">
                     <Image
                       src={
@@ -239,9 +264,9 @@ export default function HomePage() {
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Podcast Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0">
+          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <img
-              src={"/covers/roar podcast.png"}
+              src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
               alt={latestPodcast?.title || "ROAR Podcast"}
               className="w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover mb-4 md:mb-6 border-4 border-gray-500"
             />
@@ -253,7 +278,7 @@ export default function HomePage() {
             </p>
             <div className="flex gap-3 mt-2">
               <a
-                href={"https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+                href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center border-2 border-green-600 bg-white text-green-600 font-bold px-5 py-2 rounded-full text-base hover:bg-green-600 hover:text-white transition"
@@ -265,9 +290,11 @@ export default function HomePage() {
                   <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
                 </svg>
               </a>
+
+              {/* YouTube button shows only if videoLink exists */}
               
               <a
-                href={"http://www.youtube.com/@RoarDigitalMediaHub"}
+                href={"https://www.youtube.com/@roardigitalmedia"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center border-2 border-red-600 bg-white text-red-600 font-bold px-5 py-2 rounded-full text-base hover:bg-red-600 hover:text-white transition"
@@ -282,17 +309,18 @@ export default function HomePage() {
               
             </div>
           </div>
+
           {/* Podcast Details */}
           <div className="flex-1 w-full">
             <h3 className="text-2xl md:text-3xl font-bold text-[#A6192E] mb-6 text-center md:text-left">
               Latest Episode
             </h3>
             {latestPodcast ? (
-              <div className="flex flex-col sm:flex-row gap-4 items-center bg-[#A6192E] rounded-xl p-4 shadow">
+              <div className="flex flex-col sm:flex-row gap-4 items-center bg-[#A6192E] rounded-xl p-4 shadow-[0_20px_50px_rgba(0,0,0,0.28)] hover:shadow-[0_35px_80px_rgba(0,0,0,0.38)] transition-shadow duration-300">
                 <img
                   src={latestPodcast.coverImage || "/covers/roar podcast.png"}
                   alt={latestPodcast.title}
-                  className="w-16 h-16 md:w-24 md:h-24 rounded-xl object-cover border-2 border-gray-700"
+                  className="w-16 h-16 md:w-24 md:h-24 rounded-xl object-cover border-2 border-[#2C3E50]"
                 />
                 <div className="flex-1">
                   <h4 className="text-lg md:text-xl font-bold text-white mb-1">
@@ -364,7 +392,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-red-700/70 to-red-900/80 z-10 pointer-events-none" />
         </div>
         <div className="relative z-20 max-w-4xl mx-auto">
-          
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Amplifying <span className="text-red-400">Student Stories</span>
           </h2>
@@ -372,7 +399,7 @@ export default function HomePage() {
             ROAR Digital Media Hub was born from the belief that every student has a story worth telling. Through our magazine, podcast, and digital platforms, we highlight student voices and celebrate the campus experience.
           </p>
         </div>
-        </section>
+      </section>
     </div>
   );
 }
