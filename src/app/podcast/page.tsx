@@ -65,7 +65,7 @@ export default function SpotifyPage() {
                 </div>
                 {/* Main Content */}
                 <div className="flex-1 flex flex-col">
-                  <h2 className="text-2xl font-bold text-blue-900 mb-2">{link.title}</h2>
+                  <h2 className="text-2xl font-bold text-[#2C3E50] mb-2">{link.title}</h2>
                   <p className="text-gray-600 mb-4">{link.desc}</p>
                   <div className="flex items-center gap-6 text-gray-500 text-sm mb-2">
                     {link.duration && (
@@ -85,7 +85,7 @@ export default function SpotifyPage() {
                     <div className="flex items-center gap-2 text-yellow-600 text-sm mb-4">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-3-3.87M9 21v-2a4 4 0 013-3.87M12 7a4 4 0 110-8 4 4 0 010 8z" /></svg>
                       Featuring:{" "}
-                      <span className="text-blue-900 font-semibold ml-1">
+                      <span className="text-[#2C3E50] font-semibold ml-1">
                         {Array.isArray(link.guests) ? link.guests.join(", ") : link.guests}
                       </span>
                     </div>
@@ -96,7 +96,7 @@ export default function SpotifyPage() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-blue-900 text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-blue-800 transition"
+                        className="bg-[#2C3E50] text-white px-6 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-[#465a6e] transition"
                       >
                         Listen
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 001 1h4M5 12h14M12 5l7 7-7 7" /></svg>
@@ -107,7 +107,7 @@ export default function SpotifyPage() {
                         href={link.videoLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="border border-blue-900 text-blue-900 px-6 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-blue-50 transition"
+                        className="border border-[#2C3E50] text-[#465a6e] px-6 py-2 rounded-lg font-semibold flex items-center gap-2 hover:bg-blue-50 transition"
                       >
                         Watch
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z" /></svg>

@@ -42,7 +42,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Our Mission */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#2C3E50] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Mission</h2>
@@ -54,7 +54,7 @@ export default function AboutPage() {
 
             {/* Our Community */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#E8B4B8] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Community</h2>
@@ -66,7 +66,7 @@ export default function AboutPage() {
 
             {/* Our Vision */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#2C3E50] rounded-full flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800 mb-4">Our Vision</h2>
@@ -87,7 +87,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Magazine Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#2C3E50] rounded-full flex items-center justify-center mx-auto mb-6">
                 <BookOpen className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Magazine Editorial</h3>
@@ -99,7 +99,7 @@ export default function AboutPage() {
 
             {/* Podcast Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#E8B4B8] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mic className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Podcast</h3>
@@ -111,7 +111,7 @@ export default function AboutPage() {
 
             {/* Social Media Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#2C3E50] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Share2 className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Media and Marketing</h3>
@@ -123,7 +123,7 @@ export default function AboutPage() {
 
             {/* Marketing Team */}
             <div className="text-center">
-              <div className="w-20 h-20 bg-pink-400 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-[#E8B4B8] rounded-full flex items-center justify-center mx-auto mb-6">
                 <Paintbrush className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-serif text-slate-800 mb-3">Design and Layout</h3>

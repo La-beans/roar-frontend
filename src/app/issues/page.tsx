@@ -18,8 +18,8 @@ const issues: Issue[] = [
   {
     id: "001",
     title: "Fresh Voices",
-    description: "Our debut issue featuring emerging student creators and campus culture.",
-    season: "Fall",
+    description: "",
+    season: "December",
     year: "2024",
     coverImage: "/covers/Issue 1.png",
     link: "https://online.visual-paradigm.com/share/book/roar-pc-new-1vktjqd99",
@@ -27,8 +27,8 @@ const issues: Issue[] = [
   {
     id: "002",
     title: "Digital Dream",
-    description: "Exploring the intersection of technology and creativity in Gen Z culture.",
-    season: "Winter",
+    description: "",
+    season: "September",
     year: "2024",
     coverImage: "/covers/Issue 2.png",
     link: "https://online.visual-paradigm.com/share/book/roar-magazine-issue-2---flipping-book-1w43yg6gax",

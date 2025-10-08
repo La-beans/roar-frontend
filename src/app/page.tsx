@@ -184,7 +184,7 @@ export default function HomePage() {
       {/* Featured Stories Section */}
       <section id="featured-stories" className="py-12 px-4 md:px-6 bg-[#A6192E]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-[#2C3E50]">Featured Stories</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-gray-800">Featured Stories</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {featuredArticles.length > 0 ? (
               featuredArticles.map((article) => (
@@ -243,7 +243,7 @@ export default function HomePage() {
             <img
               src={"/covers/roar podcast.png"}
               alt={latestPodcast?.title || "ROAR Podcast"}
-              className="w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover mb-4 md:mb-6 border-4 border-gray-700"
+              className="w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover mb-4 md:mb-6 border-4 border-gray-500"
             />
             <h2 className="text-xl md:text-2xl font-bold mb-2 text-center">
               {latestPodcast?.title?.toUpperCase() || "ROAR PODCAST"}

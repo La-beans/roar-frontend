@@ -21,7 +21,7 @@ export default function ContactPage() {
           {/* Get In Touch Card */}
           <div className="bg-white rounded-lg border border-gray-200 p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-pink-400 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#E8B4B8] rounded-full flex items-center justify-center">
                 <Mail className="w-4 h-4 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800">Get In Touch</h2>
@@ -53,7 +53,7 @@ export default function ContactPage() {
           {/* Find Us Online Card */}
           <div className="bg-white rounded-lg border border-gray-200 p-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-pink-400 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#E8B4B8] rounded-full flex items-center justify-center">
                 <MapPin className="w-4 h-4 text-white" />
               </div>
               <h2 className="text-2xl font-serif text-slate-800">Find Us Online</h2>
