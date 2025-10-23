@@ -89,7 +89,7 @@ export default function Navbar(): React.ReactElement {
         <div className="flex items-center space-x-2">
           <img src="../covers/logo.png" alt="Logo" className="h-8 w-8" />
           <span className="font-serif font-bold text-xl text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 bg-clip-text animate-pulse">
-            ROAR
+            ROAR.
           </span>
         </div>
 

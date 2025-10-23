@@ -265,19 +265,19 @@ export default function HomePage() {
           {/* Podcast Card */}
           <div className="bg-[#A6192E] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <img
-              src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
-              alt={latestPodcast?.title || "ROAR Podcast"}
+              src={"/covers/roar podcast.png"}
+              alt={"ROAR Podcast"}
               className="w-40 h-40 md:w-64 md:h-64 rounded-2xl object-cover mb-4 md:mb-6 border-4 border-gray-500"
             />
             <h2 className="text-xl md:text-2xl font-bold mb-2 text-center">
-              {latestPodcast?.title?.toUpperCase() || "ROAR PODCAST"}
+              {"What's The 411"}
             </h2>
             <p className="text-base md:text-lg mb-4 md:mb-6 text-center">
-              {latestPodcast?.description?.slice(0, 160) || "Listen to the latest episode!"}
+              {"Listen to the latest episode!"}
             </p>
             <div className="flex gap-3 mt-2">
               <a
-                href={latestPodcast?.url || "https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
+                href={"https://open.spotify.com/show/5vB1eGq8saZY3bQx8ddKl5"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center border-2 border-green-600 bg-white text-green-600 font-bold px-5 py-2 rounded-full text-base hover:bg-green-600 hover:text-white transition"
@@ -289,8 +289,6 @@ export default function HomePage() {
                   <path d="M8 17.5V6.5L19 12L8 17.5Z" fill="#fff"/>
                 </svg>
               </a>
-
-              {/* YouTube button shows only if videoLink exists */}
               
               <a
                 href={latestPodcast?.videoLink || "http://www.youtube.com/@RoarDigitalMediaHub"}
