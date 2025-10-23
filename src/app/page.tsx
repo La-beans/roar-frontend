@@ -118,13 +118,13 @@ export default function HomePage() {
             style={{ zIndex: 0 }}
           />
           {/* red overlay behind text */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#A6192E]/50 to-[#B5141B]/55 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#A6192E]/50 to-[#A6192E]/55 z-10 pointer-events-none" />
         </div>
 
         <div className="relative z-20 max-w-4xl px-6">
           {/* darker panel behind text for readability */}
           <div className="bg-black/50 backdrop-blur-sm rounded-xl p-6 md:p-10 inline-block text-center">
-            <h1 className="text-5xl xs:text-7xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-[#A6192E] via-[#B5141B] to-[#B5141B] bg-clip-text mb-4">
+            <h1 className="text-5xl xs:text-7xl md:text-9xl font-bold text-transparent bg-gradient-to-r from-[#A6192E] via-[#A6192E] to-[#A6192E] bg-clip-text mb-4">
               ROAR
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Digital Media Hub</h2>
@@ -132,7 +132,7 @@ export default function HomePage() {
               Welcome to Roar! Discover a truth — step into a world where creativity comes alive through words and voices!
             </p>
             <Button
-              className="bg-[#B5141B] hover:bg-[#A6192E] text-white px-6 py-3 md:px-8 md:py-4 text-lg font-semibold"
+              className="bg-[#A6192E] hover:bg-[#A6192E] text-white px-6 py-3 md:px-8 md:py-4 text-lg font-semibold"
               onClick={() => {
                 const el = document.getElementById("featured-stories");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -148,9 +148,9 @@ export default function HomePage() {
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-3">
           {/* Read the Magazine Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
+          <div className="bg-[#A6192E] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
+              <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-[#A6192E]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Read the Magazine</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -158,7 +158,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/magazine">
-                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#A6192E] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Explore articles
                 </Button>
               </Link>
@@ -166,9 +166,9 @@ export default function HomePage() {
           </div>
 
           {/* Listen to the Podcast Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
+          <div className="bg-[#A6192E] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <Headphones className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
+              <Headphones className="w-7 h-7 md:w-8 md:h-8 text-[#A6192E]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Listen to the Podcast</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -176,7 +176,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/podcast">
-                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#A6192E] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Listen now
                 </Button>
               </Link>
@@ -184,9 +184,9 @@ export default function HomePage() {
           </div>
 
           {/* Reach out to the Team Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
+          <div className="bg-[#A6192E] text-white p-6 md:p-8 rounded-lg shadow-[0_25px_60px_rgba(0,0,0,0.38)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center mb-4 md:mb-6 mx-auto">
-              <Users className="w-7 h-7 md:w-8 md:h-8 text-[#B5141B]" />
+              <Users className="w-7 h-7 md:w-8 md:h-8 text-[#A6192E]" />
             </div>
             <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-center">Reach out to the Team</h3>
             <p className="text-center mb-4 md:mb-6 leading-relaxed text-sm md:text-base">
@@ -194,7 +194,7 @@ export default function HomePage() {
             </p>
             <div className="text-center">
               <Link href="/contact">
-                <Button variant="outline" className="bg-white text-[#B5141B] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
+                <Button variant="outline" className="bg-white text-[#A6192E] hover:bg-gray-100 border-0 font-semibold w-full md:w-auto">
                   Get connected
                 </Button>
               </Link>
@@ -206,7 +206,7 @@ export default function HomePage() {
       {/* Featured Stories Section */}
       <section id="featured-stories" className="py-12 px-4 md:px-6 bg-[#A6192E]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-gray-800">Featured Stories</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-[#2C3E50]">Featured Stories</h2>
           <div className="grid gap-6 md:grid-cols-3">
             {featuredArticles.length > 0 ? (
               featuredArticles.map((article) => (
@@ -245,7 +245,7 @@ export default function HomePage() {
                       }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block bg-[#B5141B] hover:bg-[#A6192E] text-white font-semibold px-6 py-2 rounded-lg mt-2 text-sm md:text-base"
+                      className="inline-block bg-[#A6192E] hover:bg-[#A6192E] text-white font-semibold px-6 py-2 rounded-lg mt-2 text-sm md:text-base"
                     >
                       Read More
                     </a>
@@ -263,7 +263,7 @@ export default function HomePage() {
       <section className="py-12 px-4 md:px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           {/* Podcast Card */}
-          <div className="bg-[#B5141B] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
+          <div className="bg-[#A6192E] text-white p-6 md:p-8 rounded-lg w-full max-w-md flex flex-col items-center mb-8 md:mb-0 shadow-[0_25px_60px_rgba(0,0,0,0.36)] hover:shadow-[0_40px_90px_rgba(0,0,0,0.45)] transition-shadow duration-300">
             <img
               src={latestPodcast?.coverImage || "/covers/roar podcast.png"}
               alt={latestPodcast?.title || "ROAR Podcast"}

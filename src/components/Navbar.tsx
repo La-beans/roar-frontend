@@ -122,7 +122,7 @@ export default function Navbar(): React.ReactElement {
           {user ? (
             <button
               onClick={logout}
-              className="text-sm px-3 py-2 rounded bg-[#A6192E] text-white hover:bg-[#B5141B]"
+              className="text-sm px-3 py-2 rounded bg-[#A6192E] text-white hover:bg-[#A6192E]"
             >
               Logout
             </button>
